@@ -20,7 +20,7 @@
 <body>
     <div id="app">
         @include("inc.navbar")
-        <main>
+        <main class='container'>
             @yield('content')
         </main>
     </div>

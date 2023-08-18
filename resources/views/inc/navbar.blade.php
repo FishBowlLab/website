@@ -12,12 +12,16 @@
         <li class="nav-item">
           <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('/about') ? 'active' : '' }}" aria-current="page" href="/about">About</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Projects
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">Shop</a></li>
+            <li><a class="dropdown-item {{ Request::is('resources') ? 'active' : '' }}" href="/resources">Teaching Resources</a></li>
           </ul>
         </li>
       </ul>
