@@ -30,8 +30,10 @@ Route::resource('resources', TeachingResourcesController::class);
 // Routes for shopping cart
 // https://www.positronx.io/laravel-livewire-add-product-to-shopping-cart-tutorial/
 
+/*
 Route::get('/dashboard', [ShirtController::class, 'index']);
 Route::get('/shopping-cart', [ShirtController::class, 'shirtCart'])->name('shopping.cart');
 Route::get('/shirt/{id}', [ShirtController::class, "addShirttoCart"])->name('addshirt.to.cart');
 Route::patch('/update-shopping-cart', [ShirtController::class, "updateCart"])->name('update.shopping.cart');
 Route::delete('delete-cart-product', [ShirtController::class, 'deleteProduct'])->name('delete.cart.product');
+*/

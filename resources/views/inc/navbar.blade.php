@@ -15,15 +15,23 @@
         <li class="nav-item">
           <a class="nav-link {{ Request::is('/about') ? 'active' : '' }}" aria-current="page" href="/about">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('/resources') ? 'active' : '' }}" aria-current="page" href="/resources">Teaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-current="page" href="/projects">Projects</a>
+        </li>
+        {{--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Projects
+            Ongoing Projects
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">Shop</a></li>
             <li><a class="dropdown-item {{ Request::is('resources') ? 'active' : '' }}" href="/resources">Teaching Resources</a></li>
           </ul>
         </li>
+        --}}
       </ul>
         <!--Left Side Navbar-->
       <ul class="navbar-nav ms-auto">
@@ -33,11 +41,13 @@
                 <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
         @endif
+        {{--
         @if (Route::has('register'))
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
         @endif
+        --}}
         @else
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

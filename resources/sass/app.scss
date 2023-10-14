@@ -1,6 +1,9 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
+// Font Awesome Icons
+@import "@fortawesome/fontawesome-free/css/all.css";
+
 // Variables
 @import 'variables';
 
@@ -9,6 +12,12 @@
 
 // Navbar
 @import "navbar";
+
+// Homepage
+@import 'homepage';
+
+// Footer
+@import 'footer';
 
 // Shopping Cart
 // @import "shoppingcart";

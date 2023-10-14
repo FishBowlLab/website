@@ -1,0 +1,32 @@
+main{
+    //background-color: $dark-blue;
+    background-image: linear-gradient(to bottom right, $light-blue, $bright-orange);
+    color:white;
+
+    .portfolio-nav{
+        .portfolio-item{
+            // add list style none
+            font-size: 80px;
+            list-style-type: none;
+            .portfolio-link{
+                color: white;
+                text-decoration: none;
+            }
+            .portfolio-link:hover{
+                font-style: italic;
+            }
+        }
+    }
+    .content-main{
+        .header-main{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .subheader-main{
+            //
+        }
+        .body-main{
+            font-size: 18px;
+        }
+    }
+}

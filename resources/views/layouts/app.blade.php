@@ -18,12 +18,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
+    <main>
         @include("inc.navbar")
-        <main class='container'>
-            @yield('content')
-        </main>
-    </div>
+        @yield('content')
+        @include("inc.footer")
+    </main>
 </body>
-@include("inc.footer")
 </html>
