@@ -21,7 +21,7 @@
     <main>
         @include("inc.navbar")
         @yield('content')
-        @include("inc.footer")
+        {{--@include("inc.footer")--}}
     </main>
 </body>
 </html>

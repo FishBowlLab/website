@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark {{ Request::is('/') ? 'fixed-top bg-opacity-0' : '' }}">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img class="navbar-logo" src="{{asset('storage/small-logo.png')}}" alt="logo">

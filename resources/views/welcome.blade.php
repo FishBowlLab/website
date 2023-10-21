@@ -20,13 +20,29 @@
                 <a class='portfolio-link' href='/resources'>Teaching</a>
               </li>    
               <li class='portfolio-item'>
-                <a class='portfolio-link' href='#'>Technology</a>
+                <a class='portfolio-link' href='/dashboard'>Technology</a>
               </li>    
               <li class='portfolio-item'>
                 <a class='portfolio-link' href='#'>Contact</a>
               </li>    
             </ul>
           </div>
+          <div>
+            <p class='fs-5'>
+              This site is currently being upgraded from Laravel 8 to Laravel 9. 
+            </p>
+          </div>
+          <footer class="py-3">
+            <p class='fs-6'>
+              Built with Boostrap 5, Vanilla Javascript, and PHP Laravel.
+            </p>
+            <ul class="nav justify-content-center border-top pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary"><i class="fa-solid fa-house"></i></a></li>
+              <li class="nav-item"><a href="https://www.linkedin.com/company/fish-bowl-lab" class="nav-link px-2 text-body-secondary"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li class="nav-item"><a href="https://github.com/FishBowlLab/website" class="nav-link px-2 text-body-secondary"><i class="fa-brands fa-github"></i></a></li>
+              <li class="nav-item"><a href="mailto: info@fishbowllab.com" class="nav-link px-2 text-body-secondary"><i class="fa-regular fa-envelope"></i></i></a></li>
+            </ul>
+          </footer>
         </div>
       </div>
       {{--
