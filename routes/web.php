@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ShirtController;
+use App\Http\Controllers\DashboardController;
+//use App\Http\Controllers\ShirtController;
 use App\Http\Controllers\TeachingResourcesController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Temporarily block registration
+Auth::routes(['register'=>false]);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 //Route::get('/about', 'HomeController@about');
 
 Route::resource('resources', TeachingResourcesController::class);
+Route::resource('dashboard',DashboardController::class);
 
 // Routes for shopping cart
 // https://www.positronx.io/laravel-livewire-add-product-to-shopping-cart-tutorial/
