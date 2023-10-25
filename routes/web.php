@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardController;
 //use App\Http\Controllers\ShirtController;
 use App\Http\Controllers\TeachingResourcesController;
+use App\Http\Middleware\EnsureProperPermission;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,13 +25,13 @@ Route::get('/', function () {
 // Temporarily block registration
 Auth::routes(['register'=>false]);
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 //Route::get('/about', 'HomeController@about');
 
 Route::resource('resources', TeachingResourcesController::class);
-Route::resource('dashboard',DashboardController::class);
+//Middleware here is basically an auth middleware.  Consider switching it unless I'm doing some interesting validation or data passing
+Route::resource('dashboard',DashboardController::class)->middleware(EnsureProperPermission::class);
 
 // Routes for shopping cart
 // https://www.positronx.io/laravel-livewire-add-product-to-shopping-cart-tutorial/

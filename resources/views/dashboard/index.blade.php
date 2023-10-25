@@ -1,66 +1,116 @@
 @extends('layouts.app')
 @section('content')
-<div class='row flex-nowrap'>
-    <x-dashboard.sidebar></x-dashboard.sidebar>
-    <div class='col py-3'>
-        <div class='row'>
-            <x-dashboard.summary-card title="Item 1">
-                This is a test for the slot.
-            </x-dashboard.summary-card>
-            <x-dashboard.summary-card title="Item 2">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum obcaecati maxime distinctio ducimus earum ut voluptatibus. Deleniti mollitia libero eveniet, impedit omnis quae aut ut natus inventore, tenetur debitis ex.
-            </x-dashboard.summary-card>
-            <x-dashboard.summary-card title="Item 3">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dicta culpa, minima illo modi eos voluptates ipsum recusandae, ratione consectetur beatae incidunt. Assumenda consectetur quisquam explicabo, totam optio ex minima.
-            </x-dashboard.summary-card>
-            <x-dashboard.summary-card title="Item 4">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dicta culpa, minima illo modi eos voluptates ipsum recusandae, ratione consectetur beatae incidunt. Assumenda consectetur quisquam explicabo, totam optio ex minima.
-            </x-dashboard.summary-card>
-        </div>
-        <div class='row'>
-            <div class='col-12 col-md-6'>
-                <div class='card'>
-                    <div class='card-header'>
-                        Project Progress Visual
+<!-- I need to include ckeditor in my build
+<script src=''></script>
+-->
+<div class="container-fluid">
+    <div class='row flex-nowrap'>
+        <x-dashboard.sidebar></x-dashboard.sidebar>
+        <div class='col py-3'>
+            <div class="row">
+                <div class="col-12 col-md-11 ">
+                    <h4 class='fs-4 p-2'>
+                        Welcome {{Auth::user()->fname ." ". Auth::user()->lname}}
+                    </h4>
+                </div>
+                <div class='col-12 col-md-1 '>
+                    <div class='p-2'>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ticketModal">
+                            Create Ticket
+                        </button>
                     </div>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Progress Chart</h5>
-                        <img src='...' class='card-img-bottom' alt='...'>
+                </div>
+                <!-- Modal -->
+                <!--text-dark is here temporarily until colour scheme is fixed -->
+                <div class="modal fade text-dark" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ticketModalLabel">Create Ticket</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!--
+                                    Possibly copy this and send the backend info here. But how will JS know?
+                                    https://www.w3schools.com/howto/howto_js_autocomplete.asp
+                                -->
+                                <div class="form-outline">
+                                    <input type="search" id="ticketID" class="form-control" placeholder="Search for your product" aria-label="Search" />
+                                </div>
+                                <!--Boiler Plate Code for CKeditor-->
+                                <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+                                <h1>Classic editor</h1>
+                                <div id="editor">
+                                    <p>This is some sample content.</p>
+                                </div>
+                                <script>
+                                    ClassicEditor
+                                        .create( document.querySelector( '#editor' ) )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                                </script>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a class="btn btn-primary" href='{{route("dashboard.create")}}'>Submit</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class='col-12 col-md-6'>
-                <div class='card'>
-                    <div class='card-header'>
-                        Project Graph
+            <div class='row'>
+                <x-dashboard.summary-card title="Item 1">
+                    This is a test for the slot.
+                </x-dashboard.summary-card>
+                <x-dashboard.summary-card title="Item 2">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum obcaecati maxime distinctio ducimus earum ut voluptatibus. Deleniti mollitia libero eveniet, impedit omnis quae aut ut natus inventore, tenetur debitis ex.
+                </x-dashboard.summary-card>
+                <x-dashboard.summary-card title="Item 3">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dicta culpa, minima illo modi eos voluptates ipsum recusandae, ratione consectetur beatae incidunt. Assumenda consectetur quisquam explicabo, totam optio ex minima.
+                </x-dashboard.summary-card>
+                <x-dashboard.summary-card title="Item 4">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. At dicta culpa, minima illo modi eos voluptates ipsum recusandae, ratione consectetur beatae incidunt. Assumenda consectetur quisquam explicabo, totam optio ex minima.
+                </x-dashboard.summary-card>
+            </div>
+            <div class='row'>
+                <div class='col-12 col-md-6'>
+                    <div class='card'>
+                        <div class='card-header'>
+                            Project Progress Visual
+                        </div>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Progress Chart</h5>
+                            <img src='...' class='card-img-bottom' alt='...'>
+                        </div>
                     </div>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Graph</h5>
-                        <img src='...' class='card-img-bottom' alt='...'>
+                </div>
+                <div class='col-12 col-md-6'>
+                    <div class='card'>
+                        <div class='card-header'>
+                            Project Graph
+                        </div>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Graph</h5>
+                            <img src='...' class='card-img-bottom' alt='...'>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--Remove this after addressing the note-->
-        <div class='row bg-light text-black py-3 fs-3'>
-            Maybe create an accordian effect for the notes with the progress?
-        </div>
-        <div class='row'>
-            <x-dashboard.summary-table>
-                {{--
-                    When the backend is complete, these components should be for looped to be displayed.
-                --}}
-                <x-dashboard.summary-table-row taskID='1' name='Product X' component='Component A' timestamp='{{now()->format("Y-m-d")}}' status='done'>
-                </x-dashboard.summary-table-row>
-                <x-dashboard.summary-table-row taskID='2' name='Product X' component='Component B' timestamp='{{now()->format("Y-m-d")}}' status='in progress'>
-                </x-dashboard.summary-table-row>
-                <x-dashboard.summary-table-row taskID='3' name='Product X' component='Component C' timestamp='{{now()->format("Y-m-d")}}' status='blocked'>
-                </x-dashboard.summary-table-row>
-                <x-dashboard.summary-table-row taskID='4' name='Product X' component='Component D' timestamp='{{now()->format("Y-m-d")}}' status='pending'>
-                </x-dashboard.summary-table-row>
-                <x-dashboard.summary-table-row taskID='5' name='Product Y' component='Component A' timestamp='{{now()->format("Y-m-d")}}' status='new'>
-                </x-dashboard.summary-table-row>
-            </x-dashboard.summary-table>
+            <!--Remove this after addressing the note-->
+            <div class='row bg-light text-black py-3 fs-3'>
+                Maybe create an accordian effect for the notes with the progress? Make nav sortable tool
+            </div>
+            <div class='row'>
+                <x-dashboard.summary-table>
+                    @foreach ($rows as $row)
+                        <x-dashboard.summary-table-row taskID='{{$row->taskID}}' name='{{$row->name}}' component='{{$row->component}}' timestamp='{{$row->updated_at}}' status='{{$row->status}}'>
+                        </x-dashboard.summary-table-row>
+                    @endforeach
+                </x-dashboard.summary-table>
+                {{$rows->links()}}
+            </div>
         </div>
     </div>
 </div>
