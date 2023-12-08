@@ -16,22 +16,23 @@
           <a class="nav-link {{ Request::is('/about') ? 'active' : '' }}" aria-current="page" href="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('/resources') ? 'active' : '' }}" aria-current="page" href="/resources">Teaching</a>
+          <a class="nav-link {{ Request::is('/teaching') ? 'active' : '' }}" aria-current="page" href="/teaching">Teaching</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-current="page" href="/projects">Projects</a>
         </li>
-        {{--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ongoing Projects
+            Past Projects
           </a>
           <ul class="dropdown-menu">
+            {{--
             <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">Shop</a></li>
             <li><a class="dropdown-item {{ Request::is('resources') ? 'active' : '' }}" href="/resources">Teaching Resources</a></li>
+            --}}
+            <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="/teaching">Blockly App</a></li>
           </ul>
         </li>
-        --}}
       </ul>
         <!--Left Side Navbar-->
       <ul class="navbar-nav ms-auto">

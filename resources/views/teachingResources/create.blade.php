@@ -2,6 +2,10 @@
 
 @section("content")
     <h1>Create Content</h1>
+    {{--
+        {{html()->text("title")->name('title')->class("form-control")->placeholder("Title")}}
+        {{ html()->closeModelForm() }}
+    --}}
     {{html()->form('POST')->route('resources.store')->class('form-group')->open()}} 
         <div class='form-group'>
             {{html()->text("title")->name('title')->class("form-control")->placeholder("Title")}}

@@ -1,9 +1,17 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+// This is for the shirt app
+//use App\Http\Controllers\ShirtDashboardController;
 //use App\Http\Controllers\ShirtController;
+
+// These are for the Blockly App
+
+use App\Http\Controllers\LessonsCompletedController;
 use App\Http\Controllers\TeachingResourcesController;
-use App\Http\Middleware\EnsureProperPermission;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ModuleController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,18 +32,30 @@ Route::get('/', function () {
 
 // Temporarily block registration
 Auth::routes(['register'=>false]);
+//Auth::routes(["verify"=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
-//Route::get('/about', 'HomeController@about');
 
-Route::resource('resources', TeachingResourcesController::class);
-//Middleware here is basically an auth middleware.  Consider switching it unless I'm doing some interesting validation or data passing
-Route::resource('dashboard',DashboardController::class)->middleware(EnsureProperPermission::class);
+Route::resource('teaching', TeachingResourcesController::class);
+
+Route::controller(TeacherController::class)->group(function(){
+    Route::get('teacher', "index")->name("teacher.index");
+    Route::get('teacher/create/{id}', "create")->name("teacher.create");
+    Route::get('teacher/{id}', "show")->name("teacher.show");
+    Route::get('teacher/{id}/edit', "edit")->name("teacher.edit");
+    Route::put('teacher/{id}', 'update')->name('teacher.update');
+    Route::post('teacher', "store")->name("teacher.store");
+    Route::delete("teacher/{id}", "destroy")->name("teacher.destroy");
+});
+
+Route::resource("modules", ModuleController::class)->only(['index', 'show']);
+
+Route::resource("student", StudentController::class)->only(["index", "show", "store"]);
+Route::resource("student/lessons", LessonsCompletedController::class);
 
 // Routes for shopping cart
 // https://www.positronx.io/laravel-livewire-add-product-to-shopping-cart-tutorial/
-
+//Route::resource('dashboard',ShirtDashboardController::class);
 /*
 Route::get('/dashboard', [ShirtController::class, 'index']);
 Route::get('/shopping-cart', [ShirtController::class, 'shirtCart'])->name('shopping.cart');

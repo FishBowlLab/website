@@ -82,7 +82,33 @@
                         </div>
                         <div class='card-body'>
                             <h5 class='card-title'>Progress Chart</h5>
-                            <img src='...' class='card-img-bottom' alt='...'>
+                            <!--img src='...' class='card-img-bottom' alt='...'-->
+                            <!--Notes on what to do next-->
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Fix Pagination and sortable connection
+                                </li>
+                                <li class="list-group-item">
+                                    Style modal and connect ckeditor
+                                </li>
+                                <li class="list-group-item">
+                                    Create tickets using Modal
+                                </li>
+                                <li class="list-group-item">
+                                    Add flagging, task deletion, and watching feature.
+                                    Flag should create a ticket maybe?
+                                </li>
+                                <li class="list-group-item">
+                                    Fix spacing between rows
+                                </li>
+                                <li class="list-group-item">
+                                    Insert Analytics using JS package for graph
+                                </li>
+                                <li class="list-group-item">
+                                    Add space for notes to client
+                                </li>
+                            </ul>
+                            
                         </div>
                     </div>
                 </div>
@@ -97,10 +123,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--Remove this after addressing the note-->
-            <div class='row bg-light text-black py-3 fs-3'>
-                Maybe create an accordian effect for the notes with the progress? Make nav sortable tool
             </div>
             <div class='row'>
                 <x-dashboard.summary-table>

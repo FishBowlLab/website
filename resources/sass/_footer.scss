@@ -1,3 +1,9 @@
 footer{
-    background-color: white;
+    ul{
+        li{
+            .nav-link{
+                color:$off-white;
+            }
+        }
+    }
 }

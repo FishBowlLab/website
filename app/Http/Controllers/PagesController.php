@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use App\Mail\WelcomeMail;
+//use App\Models\MailingList;
+//use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
@@ -34,7 +37,30 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        // This method needs to be protected
+        $this->validate($request, [
+            "email" => "required|unique:mailing_list,email",
+        ]);
+        $email = $request->input("email");
+        
+        if(MailingList::where("email", $email)->count() >0 ){
+            return redirect('/')->with("error", "You have already signed up");
+        }
+
+        // Default Case
+        $mailingList = MailingList::create([
+                    "email" => $email,
+        ]);
+
+        // Email signup and validation
+        Mail::to($email)->send(new WelcomeMail());
+        if(Mail::failures()){
+            return redirect("/")->with("error", "Sorry! Please try again later");
+        }
+
+        return redirect("/")->with("success", "You have successfully signed up");   
+        */
     }
 
     /**
@@ -81,4 +107,5 @@ class PagesController extends Controller
     {
         //
     }
+    
 }

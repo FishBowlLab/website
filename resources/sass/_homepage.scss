@@ -1,7 +1,7 @@
 main{
-    //background-color: $dark-blue;
+    //background-color: $off-white;
     background-image: linear-gradient(to bottom right, $light-blue, $bright-orange);
-    color:white;
+    color:$off-white;
 
     .portfolio-nav{
         .portfolio-item{
@@ -9,7 +9,7 @@ main{
             font-size: 80px;
             list-style-type: none;
             .portfolio-link{
-                color: white;
+                color: $off-white;
                 text-decoration: none;
             }
             .portfolio-link:hover{
@@ -18,6 +18,7 @@ main{
         }
     }
     .content-main{
+        //color: white;
         .header-main{
             font-size: 50px;
             font-weight: bold;
