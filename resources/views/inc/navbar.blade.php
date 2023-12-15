@@ -13,13 +13,10 @@
           <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('/about') ? 'active' : '' }}" aria-current="page" href="/about">About</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link {{ Request::is('/teaching') ? 'active' : '' }}" aria-current="page" href="/teaching">Teaching</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-current="page" href="/projects">Projects</a>
+          <a class="nav-link disabled" aria-current="page" href="/projects">Active Projects</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,7 +27,7 @@
             <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">Shop</a></li>
             <li><a class="dropdown-item {{ Request::is('resources') ? 'active' : '' }}" href="/resources">Teaching Resources</a></li>
             --}}
-            <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="/teaching">Blockly App</a></li>
+            <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="{{route('teaching.index')}}">Blockly App</a></li>
           </ul>
         </li>
       </ul>

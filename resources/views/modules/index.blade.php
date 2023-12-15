@@ -8,7 +8,7 @@
         <div class="card-group">
             {{--This is the intro card that will always be here no matter what the is assigned--}}
             <div class="card">
-                <img class="card-img-top" src="/storage/images/noimage.jpg" alt="Card image cap">
+                <img class="card-img-top" src="{{asset('storage/noimage.jpg')}}" alt="Card image cap">
                 <div class="card-body" style="position:relative">
                     <h4 class="card-title">Intro Games</h4>
                     <p class="card-text">
@@ -22,7 +22,7 @@
             </div>
             @foreach ($modules as $module)
                 <div class="card">
-                    <img class="card-img-top" src="/storage/images/noimage.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('storage/noimage.jpg')}}" alt="Card image cap">
                     <div class="card-body" style="position:relative">
                         <h4 class="card-title">Lesson {{$module->id}}</h4>
                         <h6>Expectation: {{$module->expectation}}</h6>

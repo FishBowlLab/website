@@ -20,8 +20,10 @@
 <body>
     <main>
         @include("inc.navbar")
-        @yield('content')
-        {{--@include("inc.footer")--}}
+        <div class="container min-vh-100">
+            @yield('content')
+        </div>
+        @include("inc.footer")
     </main>
 </body>
 </html>
