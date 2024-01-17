@@ -18,19 +18,19 @@ class PermissionNames extends Seeder
         $permissionIDs= [
             [
                 "Permission_ID" =>1,
-                "Permission_Name"=>"Admin",
+                "Permission_Name"=>"admin",
             ],
             [
                 "Permission_ID" =>2,
-                "Permission_Name"=>"Super User",
+                "Permission_Name"=>"teacher",
             ],
             [
                 "Permission_ID" =>3,
-                "Permission_Name"=>"Standard User",
+                "Permission_Name"=>"student",
             ],
             [
                 "Permission_ID" =>4,
-                "Permission_Name"=>"Guest",
+                "Permission_Name"=>"guest",
             ],
         ];
         // Awkwardly don't have a model for permissions.  Read on this to see if a model handling the relationship would be easier

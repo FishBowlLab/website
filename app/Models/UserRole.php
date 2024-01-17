@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Permissions extends Model
+class UserRole extends Model
 {
     /**
      * This model needs to see:
@@ -14,12 +15,10 @@ class Permissions extends Model
      *  3) Role Permission Table to map their ID to the Permission Name
      */
     use HasFactory;
-    protected $table='role_permission';
+    protected $table='user_roles';
 
     //Not sure if this is an approriate look up at the moment
-    /* 
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class, 'user_id');
     }
-    */
 }

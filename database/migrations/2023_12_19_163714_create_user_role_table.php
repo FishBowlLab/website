@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permission', function (Blueprint $table) {
+        // Based on: https://stackoverflow.com/questions/46016139/best-user-role-permissions-database-design-practice
+        Schema::create('user_roles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            // Is this how I should be structuring the foreign keys?
-            $table->unsignedBigInteger('role_id'); // FK to 'user_roles' or 'roles'
-            $table->string('permission_name');
-            $table->foreign('role_id')->references('id')->on('user_roles'); // or on 'roles'
+            $table->unsignedBigInteger("user_id");
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permission');
+        Schema::dropIfExists('user_roles');
     }
 };

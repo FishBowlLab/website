@@ -28,14 +28,25 @@
                                 <td class="text-left">{{$module->title}}</td>
                                 
                                 @if ($module->availability ==0)
+                                    {{--
+                                        Begin changing to a switch
+                                    --}}
+
                                     <td>Not Available</td>
                                     <td class="text-center">
                                         {{html()->submit('On')->class('btn btn-success')}}
+                                        <div class="form-check form-switch">
+                                            {{html()->input()->class('form-check-input')->type('checkbox')}}
+                                            <input class="form-check-input" type="submit">
+                                        </div>
                                     </td>
                                 @else
                                     <td><p>Available</p></td>
                                     <td class="text-center">
                                         {{html()->submit('Off')->class('btn btn-secondary')}}
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                        </div>
                                     </td>
                                 @endif
                                     {{html()->hidden($name="class_id", $value=$class_id)}}

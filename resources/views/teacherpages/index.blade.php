@@ -6,12 +6,13 @@
     <div class="card w-100">
         <div class="card-header">{{ __('Teacher Dashboard') }}</div>
         <div class="card-body">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
             <p>Welcome, {{$name}}</p>
+            {{-- Testing relational database stuff
+            <p>
+                auth()->user()->role->role_id
+                auth()->user()->roleName()->permission_name
+            </p>
+            --}}
         </div>
         {{--Only render tiles if the user has classes--}}
         @if ($class_amt > 0)

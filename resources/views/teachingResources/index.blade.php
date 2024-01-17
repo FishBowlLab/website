@@ -20,16 +20,26 @@
     </nav>
 </div>
 --}}
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">Currently featured is a prototype of a teaching app created using Blockly, showcasing the fusion of web technology and educational progress.</p>
+  <hr class="my-4">
+  <div class="text-center">
+    <a class="btn btn-primary btn-lg" href="{{route('teacher.index')}}" role="button">Teacher View</a>
+    <a class="btn btn-primary btn-lg" href="{{route('student.index')}}" role="button">Student View</a>
+  </div>
+</div>
 <div class="row">
   <div class="col">
+    <p>
+      
+    </p>
     <h2>Add a toggle for user type</h2>
     <p>
       Maybe default the teacher view and connenct all the views. <br>
       The challenge will be to stitch together all the AUTH.
       There also is no container here. Look into the templating. Priority is the routing and we can fix the front end later.
     </p>
-    <a href="{{route('teacher.index')}}" class="btn btn-primary">Teacher View</a>
-    <a href="{{route('student.index')}}" class="btn btn-primary">Student View</a>
   </div>
   
 </div>

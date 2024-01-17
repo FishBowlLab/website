@@ -17,25 +17,21 @@ class RolePermissionInitial extends Seeder
     {
         $roles =[
             [
-                "Role_ID"=>1,
-                "Permission_ID"=>1,
+                "user_ID"=>1,
+                "role_ID"=>2,
+                "created_at"=>date('Y-m-d H:i:s'),
+                "updated_at"=>date('Y-m-d H:i:s'),
             ],
             [
-                "Role_ID"=>2,
-                "Permission_ID"=>4,
-            ],
-            [
-                "Role_ID"=>3,
-                "Permission_ID"=>2,
-            ],
-            [
-                "Role_ID"=>4,
-                "Permission_ID"=>3,
+                "user_ID"=>2,
+                "role_ID"=>3,
+                "created_at"=>date('Y-m-d H:i:s'),
+                "updated_at"=>date('Y-m-d H:i:s'),
             ],
         ];
         //
         foreach($roles as $role){
-            DB::table('role_permission')->insert($role);
+            DB::table('user_roles')->insert($role);
         }
     }
 }
