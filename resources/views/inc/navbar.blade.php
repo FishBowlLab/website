@@ -15,8 +15,13 @@
         <li class="nav-item">
           <a class="nav-link {{ Request::is('/teaching') ? 'active' : '' }}" aria-current="page" href="/teaching">Teaching</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-current="page" href="/projects">Active Projects</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Active Projects
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item {{ Request::is('dashboard') ? 'active' : '' }}" href="{{route('buylist.index')}}">MTG Buylist Fetcher</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

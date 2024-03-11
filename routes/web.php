@@ -6,6 +6,7 @@
 
 // These are for the Blockly App
 
+use App\Http\Controllers\BuylistController;
 use App\Http\Controllers\LessonsCompletedController;
 use App\Http\Controllers\TeachingResourcesController;
 use App\Http\Controllers\TeacherController;
@@ -48,6 +49,7 @@ Route::controller(TeacherController::class)->group(function(){
     Route::delete("teacher/{id}", "destroy")->name("teacher.destroy");
 });
 
+Route::resource("buylist", BuylistController::class);
 Route::resource("modules", ModuleController::class)->only(['index', 'show']);
 
 Route::resource("student", StudentController::class)->only(["index", "show", "store"]);
