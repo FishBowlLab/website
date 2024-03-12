@@ -6,19 +6,17 @@ use Illuminate\View\Component;
 
 class CardRow extends Component
 {
-    public $data;
-    public $name;
+    public $card;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $data)
+    public function __construct($card)
     {
         //
-        $this->name=$name;
-        $this->data=$data;
+        $this->card=$card;
     }
 
     /**
