@@ -26,15 +26,9 @@
               <!--Convert this into a proper form after-->
               {{html()->form('POST')->route('buylist.store')->class('form-group')->open()}}   
                 <label for="cardListText" class="form-label">Paste list here</label>
-                {{--
+                
                 {{html()->textarea("cardListText")->class("form-control overflow-scroll")->id("cardListText")->rows('3')->placeholder("#example &#10;Underground Sea &#10;Taiga")}}
-                --}}
-                <!--For Testing-->
-                {{html()->textarea("cardListText", "Underground Sea &#10;Taiga")->class("form-control overflow-scroll")->id("cardListText")->rows('3')}}
-                {{--
-                <textarea class="form-control overflow-scroll" id="cardListText" placeholder="#example &#10;Underground Sea &#10;Taiga" rows="3"></textarea>
-                --}}
-                {{html()->submit('STORE')->class('btn btn-primary')}}
+                {{html()->submit('Submit')->class('btn btn-primary')}}
               {{ html()->form()->close() }}
             </div>
         </div>
@@ -48,11 +42,6 @@
         <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="add-tab">...</div>
         </div>
     </div>
-</div>
-<div class=row>
-  <div class='col-12'>
-    <a href='{{route("buylist.store")}}' class='btn btn-primary'>Import</a> 
-  </div>
 </div>
 
 <div class='row'>
@@ -72,7 +61,4 @@
     </div>
 </div>
 
-
 @endsection
-
-

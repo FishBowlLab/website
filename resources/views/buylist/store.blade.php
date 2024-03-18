@@ -2,6 +2,11 @@
 
 @section('content')
 <div class='row'>
+  <div class='col-12 col-md-2'>
+    <a type="button" class="btn btn-primary" href="{{route('buylist.index')}}">Back</a>
+  </div>
+</div>
+<div class='row'>
   <table id="buylist-table" class="table table-striped">
     <thead>
       <tr>
@@ -31,7 +36,11 @@
   </table>
 </div>
 
-<!--This script tag is a placeholder until I move it to the Laravel Build-->
+<!-- Scripts -->
+{{--For some reason, vite is only building the event listener and the update sum, but not the row updater--}}
+{{--
+@vite(['resources/js/buylist.js'])
+--}}
 <script>
 window.addEventListener("load", () => {
   let tableRows=document.querySelectorAll('[class^="card_"]')
@@ -87,7 +96,7 @@ function updateRow(item){
     rows[0].style.display="";
   }
   else{
-    console.log("This DNE");
+    alert("This option does not exist");
   }
   updateCardValue();
 }
