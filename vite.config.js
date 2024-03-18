@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/js/buylist.js',
                 'resources/js/blocklyBase.js',
                 'resources/js/blocklyGraph.js',
                 'resources/js/blockly/blockly_compressed.js',
