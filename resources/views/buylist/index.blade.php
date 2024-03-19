@@ -23,8 +23,7 @@
         <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="mb-3">
-              <!--Convert this into a proper form after-->
-              {{html()->form('POST')->route('buylist.store')->class('form-group')->open()}}   
+              {{html()->form('PUT')->route('buylist.update', 'text-submit')->class('form-group')->open()}}  
                 <label for="cardListText" class="form-label">Paste list here</label>
                 
                 {{html()->textarea("cardListText")->class("form-control overflow-scroll")->id("cardListText")->rows('3')->placeholder("#example &#10;Underground Sea &#10;Taiga")}}
@@ -35,8 +34,12 @@
         <!--File Upload Tab-->
         <div class="tab-pane fade" id="upload" role="tabpanel" aria-labelledby="upload-tab">
           <div class="mb-3">
-            <label for="formFile" class="form-label">Upload a txt or csv file</label>
-            <input class="form-control" type="file" id="formFile">
+            {{html()->form('PUT')->route('buylist.update', 'file-submit')->class('form-group')->attribute('enctype', 'multipart/form-data')->open()}}   
+              <label for="formFile" class="form-label">Upload a txt or csv file</label>
+                
+                {{html()->file("cardListFile")->class("form-control")->id("cardListFile")}}
+                {{html()->submit('Submit')->class('btn btn-primary')}}
+            {{ html()->form()->close() }}
           </div>
         </div>
         <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="add-tab">...</div>
